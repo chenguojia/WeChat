@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+	<context:component-scan base-package="com.cardvalue.wechat" >
+	      <context:exclude-filter type="regex" expression=".*Db.*ServiceImpl"/>
+	</context:component-scan>
+
+	<aop:aspectj-autoproxy />
+
+	<mvc:annotation-driven />
+
+	<mvc:interceptors>
+	    <!-- 配置Token拦截器，防止用户重复提交数据 -->
+	    <mvc:interceptor>
+	        <mvc:mapping path="/**"/>
+	        <bean class="com.cardvalue.wechat.interceptor.TokenInterceptor"/>
+	    </mvc:interceptor>
+	</mvc:interceptors>
+
+	<bean id="xmlConverter" class="com.cardvalue.wechat.util.XMLConverter">
+		<property name="marshaller" ref="castorMarshaller" />
+		<property name="unmarshaller" ref="castorMarshaller" />
+	</bean>
+
+	<bean id="castorMarshaller" class="org.springframework.oxm.castor.CastorMarshaller" >
+		<property name="mappingLocation" value="classpath:mapping.xml" />
+	</bean>
+
+	<task:annotation-driven executor="weExecutor" scheduler="weScheduler"/>
+	<task:executor id="weExecutor"/>
+	<task:scheduler id="weScheduler"/>
+
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="smtp.cardvalue.cn" />
+        <property name="username" value="wx@cardvalue.cn" />
+        <property name="password" value="cardvalue" />
+        <property name="port" value="25" />
+        <property name="javaMailProperties">
+            <props>
+                <prop key="mail.smtp.auth">true</prop>
+            </props>
+        </property>
+	</bean>
+
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+				<value>we-messages</value>
+			</list>
+		</property>
+	</bean>
+
+	<util:list id="loggedSheetConfig">
+        <bean class="com.cardvalue.wechat.util.ColumnConfig">
+            <property name="header" value="姓名" />
+            <property name="property" value="name" />
+        </bean>
+        <bean class="com.cardvalue.wechat.util.ColumnConfig">
+            <property name="header" value="手机号" />
+            <property name="property" value="mobile" />
+        </bean>
+        <bean class="com.cardvalue.wechat.util.ColumnConfig">
+            <property name="header" value="登录日期" />
+            <property name="property" value="loginDate" />
+        </bean>
+        <bean class="com.cardvalue.wechat.util.ColumnConfig">
+            <property name="header" value="登录时间" />
+            <property name="property" value="loginTime" />
+        </bean>
+        <bean class="com.cardvalue.wechat.util.ColumnConfig">
+            <property name="header" value="分支机构" />
+            <property name="property" value="branch" />
+        </bean>
+        <bean class="com.cardvalue.wechat.util.ColumnConfig">
+            <property name="header" value="地市" />
+            <property name="property" value="region" />
+        </bean>
+        <bean class="com.cardvalue.wechat.util.ColumnConfig">
+            <property name="header" value="当日登录次数" />
+            <property name="property" value="dayLoginCount" />
+        </bean>
+        <bean class="com.cardvalue.wechat.util.ColumnConfig">
+            <property name="header" value="当日提交线索数量" />
+            <property name="property" value="submitLeadsCount" />
+        </bean>
+	</util:list>
+
+	<util:list id="unLoggedSheetConfig">
+        <bean class="com.cardvalue.wechat.util.ColumnConfig">
+            <property name="header" value="姓名" />
+            <property name="property" value="name" />
+        </bean>
+        <bean class="com.cardvalue.wechat.util.ColumnConfig">
+            <property name="header" value="手机号" />
+            <property name="property" value="mobile" />
+        </bean>
+        <bean class="com.cardvalue.wechat.util.ColumnConfig">
+            <property name="header" value="用户名" />
+            <property name="property" value="username" />
+        </bean>
+        <bean class="com.cardvalue.wechat.util.ColumnConfig">
+            <property name="header" value="密码" />
+            <property name="property" value="password" />
+        </bean>
+        <bean class="com.cardvalue.wechat.util.ColumnConfig">
+            <property name="header" value="分支机构" />
+            <property name="property" value="branch" />
+        </bean>
+        <bean class="com.cardvalue.wechat.util.ColumnConfig">
+            <property name="header" value="地市" />
+            <property name="property" value="region" />
+        </bean>
+	</util:list>
+
+	<util:list id="groupInDateSheetConfig">
+        <bean class="com.cardvalue.wechat.util.ColumnConfig">
+            <property name="header" value="日期" />
+            <property name="property" value="label" />
+        </bean>
+        <bean class="com.cardvalue.wechat.util.ColumnConfig">
+            <property name="header" value="人数" />
+            <property name="property" value="value" />
+        </bean>
+	</util:list>
+
+	<util:list id="groupInBranchSheetConfig">
+        <bean class="com.cardvalue.wechat.util.ColumnConfig">
+            <property name="header" value="分支机构" />
+            <property name="property" value="branch" />
+        </bean>
+        <bean class="com.cardvalue.wechat.util.ColumnConfig">
+            <property name="header" value="总人数" />
+            <property name="property" value="total" />
+        </bean>
+        <bean class="com.cardvalue.wechat.util.ColumnConfig">
+            <property name="header" value="登录人数" />
+            <property name="property" value="loggedCount" />
+        </bean>
+        <bean class="com.cardvalue.wechat.util.ColumnConfig">
+            <property name="header" value="未登录人数" />
+            <property name="property" value="unLoggedCount" />
+        </bean>
+        <bean class="com.cardvalue.wechat.util.ColumnConfig">
+            <property name="header" value="百分比" />
+            <property name="property" value="percentage" />
+        </bean>
+	</util:list>
+
+	<util:list id="activeRateSheetConfig">
+        <bean class="com.cardvalue.wechat.util.ColumnConfig">
+            <property name="header" value="区域" />
+            <property name="property" value="branch" />
+        </bean>
+        <bean class="com.cardvalue.wechat.util.ColumnConfig">
+            <property name="header" value="总活跃度" />
+            <property name="property" value="totalRate" />
+        </bean>
+        <bean class="com.cardvalue.wechat.util.ColumnConfig">
+            <property name="header" value="当月活跃度" />
+            <property name="property" value="monthRate" />
+        </bean>
+        <bean class="com.cardvalue.wechat.util.ColumnConfig">
+            <property name="header" value="人均月活跃度" />
+            <property name="property" value="ratePerCapital" />
+        </bean>
+	</util:list>
+
+	<util:list id="campaignReportSheetConfig">
+        <bean class="com.cardvalue.wechat.util.ColumnConfig">
+            <property name="header" value="分支机构" />
+            <property name="property" value="branch" />
+        </bean>
+        <bean class="com.cardvalue.wechat.util.ColumnConfig">
+            <property name="header" value="地市" />
+            <property name="property" value="region" />
+        </bean>
+        <bean class="com.cardvalue.wechat.util.ColumnConfig">
+            <property name="header" value="姓名" />
+            <property name="property" value="name" />
+        </bean>
+        <bean class="com.cardvalue.wechat.util.ColumnConfig">
+            <property name="header" value="砸蛋次数" />
+            <property name="property" value="drawCount" />
+        </bean>
+        <bean class="com.cardvalue.wechat.util.ColumnConfig">
+            <property name="header" value="金额" />
+            <property name="property" value="amount" />
+        </bean>
+        <bean class="com.cardvalue.wechat.util.ColumnConfig">
+            <property name="header" value="登录次数" />
+            <property name="property" value="loginCount" />
+        </bean>
+	</util:list>
+
+	<util:list id="pointSummarySheetConfig">
+        <bean class="com.cardvalue.wechat.util.ColumnConfig" p:header="分支机构" p:property="branch"/>
+        <bean class="com.cardvalue.wechat.util.ColumnConfig" p:header="地市" p:property="region"/>
+        <bean class="com.cardvalue.wechat.util.ColumnConfig" p:header="姓名" p:property="name"/>
+        <bean class="com.cardvalue.wechat.util.ColumnConfig" p:header="帐号等级" p:property="level"/>
+		<bean class="com.cardvalue.wechat.util.ColumnConfig" p:header="累计积分" p:property="totalPoint"/>
+		<bean class="com.cardvalue.wechat.util.ColumnConfig" p:header="可用积分" p:property="availablePoint"/>
+		<bean class="com.cardvalue.wechat.util.ColumnConfig" p:header="登录次数" p:property="loginCount"/>
+		<bean class="com.cardvalue.wechat.util.ColumnConfig" p:header="授信查询次数" p:property="searchCount"/>
+		<bean class="com.cardvalue.wechat.util.ColumnConfig" p:header="提交线索次数" p:property="leadsCount"/>
+		<bean class="com.cardvalue.wechat.util.ColumnConfig" p:header="查询商户次数" p:property="merchantCount"/>
+		<bean class="com.cardvalue.wechat.util.ColumnConfig" p:header="登录天数" p:property="loginDateCount"/>
+	</util:list>
+
+	<util:list id="unactivatedMerchantSheetConfig">
+        <bean class="com.cardvalue.wechat.util.ColumnConfig" p:header="商户编号" p:property="mid"/>
+        <bean class="com.cardvalue.wechat.util.ColumnConfig" p:header="商户名称" p:property="name"/>
+        <bean class="com.cardvalue.wechat.util.ColumnConfig" p:header="联系人" p:property="contactName"/>
+        <bean class="com.cardvalue.wechat.util.ColumnConfig" p:header="联系电话" p:property="contactMobile"/>
+    </util:list>
+
+	<util:list id="addKeyMerchantSummarySheetConfig">
+        <bean class="com.cardvalue.wechat.util.ColumnConfig" p:header="地区" p:property="branch"/>
+        <bean class="com.cardvalue.wechat.util.ColumnConfig" p:header="添加商户数" p:property="merchantCount"/>
+        <bean class="com.cardvalue.wechat.util.ColumnConfig" p:header="通过商户数" p:property="activeSuccessMerchantCount"/>
+        <bean class="com.cardvalue.wechat.util.ColumnConfig" p:header="未通过商户数" p:property="activeFailedMerchantCount"/>
+    </util:list>
+
+	<util:list id="addKeyMerchantDetailSheetConfig">
+        <bean class="com.cardvalue.wechat.util.ColumnConfig" p:header="地区" p:property="province"/>
+        <bean class="com.cardvalue.wechat.util.ColumnConfig" p:header="商户编号" p:property="mid"/>
+        <bean class="com.cardvalue.wechat.util.ColumnConfig" p:header="商户名称" p:property="merchantName"/>
+        <bean class="com.cardvalue.wechat.util.ColumnConfig" p:header="添加人用户名" p:property="salesUsername"/>
+        <bean class="com.cardvalue.wechat.util.ColumnConfig" p:header="添加人" p:property="salesName"/>
+        <bean class="com.cardvalue.wechat.util.ColumnConfig" p:header="添加时间" p:property="createDate"/>
+        <bean class="com.cardvalue.wechat.util.ColumnConfig" p:header="更新时间" p:property="updateDate"/>
+        <bean class="com.cardvalue.wechat.util.ColumnConfig" p:header="验证人" p:property="verifier"/>
+        <bean class="com.cardvalue.wechat.util.ColumnConfig" p:header="状态" p:property="activeStatusLabel"/>
+        <bean class="com.cardvalue.wechat.util.ColumnConfig" p:header="备注信息" p:property="activeStatusMemo"/>
+    </util:list>
+
+	<bean id="beanMapper" class="org.dozer.DozerBeanMapper">
+		<property name="mappingFiles">
+			<list>
+				<value>dozer-bean-mappings.xml</value>
+			</list>
+		</property>
+	</bean>
+
+    <!--查询附近商户接口-->
+	<bean id="aroundMerchServiceStub" class="com.cardvalue.support.ws.impl.AroundMerchWSServiceImplPortBindingStub">
+		<constructor-arg name="endpointURL" value="${ws.nearby.url}"/>
+		<constructor-arg name="service"><null/></constructor-arg>
+	</bean>
+
+	<!-- 对账接口 -->
+	<bean id="queryDataPortBindingStub" class="com.cardvalue.support.ws.impl.QueryDataPortBindingStub">
+		<constructor-arg name="endpointURL" value="${ws.statement.url}"/>
+		<constructor-arg name="service"><null/></constructor-arg>
+	</bean>
+
+    <!-- 网站微信接口 -->
+    <bean id="addServiceBindingStub" class="cn.cvbaoli.www.AddServiceBindingStub">
+        <constructor-arg name="endpointURL" value="${ws.website.url}"/>
+        <constructor-arg name="service">
+            <null/>
+        </constructor-arg>
+    </bean>
+
+    <!-- CRM速融接口 -->
+    <bean id="mcaServiceBindingStub" class="cn.cardvalue.crm.McaServiceBindingStub">
+        <constructor-arg name="endpointURL" value="${ws.instant.url}"/>
+        <constructor-arg name="service">
+            <null/>
+        </constructor-arg>
+    </bean>
+
+    <!-- 获取商户流水验证问题接口 -->
+    <bean id="merchantServiceImplPortBindingStub" class="com.cardvalue.cas.service.impl.MerchantServiceImplPortBindingStub">
+        <constructor-arg name="endpointURL" value="${ws.question.url}"/>
+        <constructor-arg name="service">
+            <null/>
+        </constructor-arg>
+    </bean>
+
+    <!--本地公外部调用接口-->
+	<bean class="org.springframework.remoting.jaxws.SimpleHttpServerJaxWsServiceExporter"  p:hostname="${ws.local.ip}" p:port="8081" p:basePath="/services/"/>
+
+    <!--短信接口-->
+	<bean id="smsBusinessService" class="com.jianzhou.sdk.BusinessService">
+		<constructor-arg name="endPoint" value="${ws.sms.url}"/>
+	</bean>
+
+	<import resource="data-access-config.xml"/>
+	<import resource="spring-security.xml"/>
+
+	<!-- 支持上传文件 -->
+   <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
+
+    <!-- 报表service-->
+    <bean id="reportService" class="com.cardvalue.wechat.service.impl.ReportServiceImpl">
+        <property name="outputPath" value="${service.output.path}" />
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+</beans>

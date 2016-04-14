@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<decorators defaultDir="/WEB-INF/layout">
+	<excludes>
+		<pattern>/resources/*</pattern>
+		<pattern>/background/*</pattern>
+		<pattern>/report/*</pattern>
+		<pattern>/fileUpload</pattern>
+		<pattern>/public/newestCampaign</pattern>
+	</excludes>
+
+	<decorator name="main" page="main.jsp">
+		<pattern>/</pattern>
+		<pattern>/auth/*</pattern>
+		<pattern>/sales/*</pattern>
+		<pattern>/common/*</pattern>
+		<pattern>/m/*</pattern>
+		<pattern>/merchant/*</pattern>
+	</decorator>
+
+	<!--新版商户装修页面-->
+	<decorator name="newMerchant" page="merchant-main.jsp">
+		<pattern>/new/m/*</pattern>
+	</decorator>
+
+	<decorator name="blank" page="blank.jsp">
+		<pattern>/campaign/*</pattern>
+	</decorator>
+
+</decorators>  

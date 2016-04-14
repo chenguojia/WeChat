@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<definitions xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://www.cardvalue.cn" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://www.cardvalue.cn">
+<types>
+<xsd:schema targetNamespace="http://www.cardvalue.cn"
+>
+ <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+ <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" />
+ <xsd:complexType name="soapAuthenticateRequest">
+  <xsd:sequence>
+   <xsd:element name="list_id" type="xsd:string"/>
+   <xsd:element name="clientSecret" type="xsd:string"/>
+   <xsd:element name="userName" type="xsd:string"/>
+   <xsd:element name="password" type="xsd:string"/>
+  </xsd:sequence>
+ </xsd:complexType>
+ <xsd:complexType name="soapGetUserRequest">
+  <xsd:sequence>
+   <xsd:element name="list_id" type="xsd:string"/>
+   <xsd:element name="clientSecret" type="xsd:string"/>
+   <xsd:element name="userName" type="xsd:string"/>
+   <xsd:element name="password" type="xsd:string"/>
+  </xsd:sequence>
+ </xsd:complexType>
+ <xsd:complexType name="soapSetPasswordRequest">
+  <xsd:sequence>
+   <xsd:element name="list_id" type="xsd:string"/>
+   <xsd:element name="clientSecret" type="xsd:string"/>
+   <xsd:element name="userName" type="xsd:string"/>
+   <xsd:element name="password" type="xsd:string"/>
+   <xsd:element name="newPass" type="xsd:string"/>
+   <xsd:element name="confirmPass" type="xsd:string"/>
+  </xsd:sequence>
+ </xsd:complexType>
+ <xsd:complexType name="soapPostUserRequest">
+  <xsd:sequence>
+   <xsd:element name="list_id" type="xsd:string"/>
+   <xsd:element name="clientSecret" type="xsd:string"/>
+   <xsd:element name="userName" type="xsd:string"/>
+   <xsd:element name="password" type="xsd:string"/>
+   <xsd:element name="NameEx" type="xsd:string"/>
+   <xsd:element name="dda" type="xsd:string"/>
+   <xsd:element name="bank_name" type="xsd:string"/>
+   <xsd:element name="IDNumber" type="xsd:string"/>
+   <xsd:element name="email" type="xsd:string"/>
+   <xsd:element name="cellPhone" type="xsd:string"/>
+  </xsd:sequence>
+ </xsd:complexType>
+ <xsd:complexType name="soapAddLeadRequest">
+  <xsd:sequence>
+   <xsd:element name="list_id" type="xsd:string"/>
+   <xsd:element name="clientSecret" type="xsd:string"/>
+   <xsd:element name="userName" type="xsd:string" nillable="1"/>
+   <xsd:element name="password" type="xsd:string" nillable="1"/>
+   <xsd:element name="status" type="xsd:string"/>
+   <xsd:element name="MID" type="xsd:string"/>
+   <xsd:element name="MerchantClass" type="xsd:string" nillable="1"/>
+   <xsd:element name="tm_id" type="xsd:string" nillable="1"/>
+   <xsd:element name="owner_id" type="xsd:string" nillable="1"/>
+   <xsd:element name="AgentBranch" type="xsd:string" nillable="1"/>
+   <xsd:element name="AgentPhone" type="xsd:string" nillable="1"/>
+   <xsd:element name="account_manager_uid" type="xsd:string" nillable="1"/>
+   <xsd:element name="BusinessName" type="xsd:string" nillable="1"/>
+   <xsd:element name="OwnerName" type="xsd:string" nillable="1"/>
+   <xsd:element name="ProductsSold" type="xsd:string" nillable="1"/>
+   <xsd:element name="SICCode" type="xsd:string" nillable="1"/>
+   <xsd:element name="SICDescription" type="xsd:string" nillable="1"/>
+   <xsd:element name="MonthlyVolume" type="xsd:string" nillable="1"/>
+   <xsd:element name="ProcMonthlyVolume" type="xsd:string" nillable="1"/>
+   <xsd:element name="SurveyMerchantLocation" type="xsd:string" nillable="1"/>
+   <xsd:element name="SurveySquareFootage" type="xsd:string" nillable="1"/>
+   <xsd:element name="BusinessPhone" type="xsd:string" nillable="1"/>
+   <xsd:element name="yearsInBusiness" type="xsd:string" nillable="1"/>
+   <xsd:element name="LeadBusinessType" type="xsd:string" nillable="1"/>
+   <xsd:element name="CompanyType" type="xsd:string" nillable="1"/>
+   <xsd:element name="BusinessProvince" type="xsd:string" nillable="1"/>
+   <xsd:element name="BusinessCity" type="xsd:string" nillable="1"/>
+   <xsd:element name="BusinessAddress" type="xsd:string" nillable="1"/>
+   <xsd:element name="BusinessZip" type="xsd:string" nillable="1"/>
+   <xsd:element name="ContactName" type="xsd:string" nillable="1"/>
+   <xsd:element name="ContactType" type="xsd:string" nillable="1"/>
+   <xsd:element name="OwnerPercentage2" type="xsd:string" nillable="1"/>
+   <xsd:element name="Yearsinbusinessundercurrentowner" type="xsd:string" nillable="1"/>
+   <xsd:element name="OfficePhone" type="xsd:string" nillable="1"/>
+   <xsd:element name="CellPhone" type="xsd:string" nillable="1"/>
+   <xsd:element name="Fax" type="xsd:string" nillable="1"/>
+   <xsd:element name="Email" type="xsd:string" nillable="1"/>
+   <xsd:element name="CorporateName" type="xsd:string" nillable="1"/>
+   <xsd:element name="CorporateState" type="xsd:string" nillable="1"/>
+   <xsd:element name="CorporateCity" type="xsd:string" nillable="1"/>
+   <xsd:element name="CorporateAddress" type="xsd:string" nillable="1"/>
+   <xsd:element name="CorporateZip" type="xsd:string" nillable="1"/>
+   <xsd:element name="Owner1Province" type="xsd:string" nillable="1"/>
+   <xsd:element name="OwnerCity" type="xsd:string" nillable="1"/>
+   <xsd:element name="OwnerAddress" type="xsd:string" nillable="1"/>
+   <xsd:element name="OwnerZip" type="xsd:string" nillable="1"/>
+   <xsd:element name="OwnerPhone" type="xsd:string" nillable="1"/>
+   <xsd:element name="OwnerCellPhone" type="xsd:string" nillable="1"/>
+   <xsd:element name="OwnerSSN" type="xsd:string" nillable="1"/>
+   <xsd:element name="OwnerEmail" type="xsd:string" nillable="1"/>
+   <xsd:element name="SUBMERNO" type="xsd:string" nillable="1"/>
+   <xsd:element name="SUBMERNAME" type="xsd:string" nillable="1"/>
+   <xsd:element name="SUBMERADDR" type="xsd:string" nillable="1"/>
+   <xsd:element name="SUBINST" type="xsd:string" nillable="1"/>
+   <xsd:element name="Notes" type="xsd:string" nillable="1"/>
+  </xsd:sequence>
+ </xsd:complexType>
+ <xsd:complexType name="soapPostLeadRequest">
+  <xsd:sequence>
+   <xsd:element name="list_id" type="xsd:string"/>
+   <xsd:element name="clientSecret" type="xsd:string"/>
+   <xsd:element name="userName" type="xsd:string" nillable="1"/>
+   <xsd:element name="password" type="xsd:string" nillable="1"/>
+   <xsd:element name="lead_id" type="xsd:string"/>
+   <xsd:element name="status" type="xsd:string" nillable="1"/>
+   <xsd:element name="MID" type="xsd:string" nillable="1"/>
+   <xsd:element name="MerchantClass" type="xsd:string" nillable="1"/>
+   <xsd:element name="tm_id" type="xsd:string" nillable="1"/>
+   <xsd:element name="owner_id" type="xsd:string" nillable="1"/>
+   <xsd:element name="AgentBranch" type="xsd:string" nillable="1"/>
+   <xsd:element name="AgentPhone" type="xsd:string" nillable="1"/>
+   <xsd:element name="account_manager_uid" type="xsd:string" nillable="1"/>
+   <xsd:element name="BusinessName" type="xsd:string" nillable="1"/>
+   <xsd:element name="OwnerName" type="xsd:string" nillable="1"/>
+   <xsd:element name="ProductsSold" type="xsd:string" nillable="1"/>
+   <xsd:element name="SICCode" type="xsd:string" nillable="1"/>
+   <xsd:element name="SICDescription" type="xsd:string" nillable="1"/>
+   <xsd:element name="MonthlyVolume" type="xsd:string" nillable="1"/>
+   <xsd:element name="ProcMonthlyVolume" type="xsd:string" nillable="1"/>
+   <xsd:element name="SurveyMerchantLocation" type="xsd:string" nillable="1"/>
+   <xsd:element name="SurveySquareFootage" type="xsd:string" nillable="1"/>
+   <xsd:element name="BusinessPhone" type="xsd:string" nillable="1"/>
+   <xsd:element name="yearsInBusiness" type="xsd:string" nillable="1"/>
+   <xsd:element name="LeadBusinessType" type="xsd:string" nillable="1"/>
+   <xsd:element name="CompanyType" type="xsd:string" nillable="1"/>
+   <xsd:element name="BusinessProvince" type="xsd:string" nillable="1"/>
+   <xsd:element name="BusinessCity" type="xsd:string" nillable="1"/>
+   <xsd:element name="BusinessAddress" type="xsd:string" nillable="1"/>
+   <xsd:element name="BusinessZip" type="xsd:string" nillable="1"/>
+   <xsd:element name="ContactName" type="xsd:string" nillable="1"/>
+   <xsd:element name="ContactType" type="xsd:string" nillable="1"/>
+   <xsd:element name="OwnerPercentage2" type="xsd:string" nillable="1"/>
+   <xsd:element name="Yearsinbusinessundercurrentowner" type="xsd:string" nillable="1"/>
+   <xsd:element name="OfficePhone" type="xsd:string" nillable="1"/>
+   <xsd:element name="CellPhone" type="xsd:string" nillable="1"/>
+   <xsd:element name="Fax" type="xsd:string" nillable="1"/>
+   <xsd:element name="Email" type="xsd:string" nillable="1"/>
+   <xsd:element name="CorporateName" type="xsd:string" nillable="1"/>
+   <xsd:element name="CorporateState" type="xsd:string" nillable="1"/>
+   <xsd:element name="CorporateCity" type="xsd:string" nillable="1"/>
+   <xsd:element name="CorporateAddress" type="xsd:string" nillable="1"/>
+   <xsd:element name="CorporateZip" type="xsd:string" nillable="1"/>
+   <xsd:element name="Owner1Province" type="xsd:string" nillable="1"/>
+   <xsd:element name="OwnerCity" type="xsd:string" nillable="1"/>
+   <xsd:element name="OwnerAddress" type="xsd:string" nillable="1"/>
+   <xsd:element name="OwnerZip" type="xsd:string" nillable="1"/>
+   <xsd:element name="OwnerPhone" type="xsd:string" nillable="1"/>
+   <xsd:element name="OwnerCellPhone" type="xsd:string" nillable="1"/>
+   <xsd:element name="OwnerSSN" type="xsd:string" nillable="1"/>
+   <xsd:element name="OwnerEmail" type="xsd:string" nillable="1"/>
+   <xsd:element name="SUBMERNO" type="xsd:string" nillable="1"/>
+   <xsd:element name="SUBMERNAME" type="xsd:string" nillable="1"/>
+   <xsd:element name="SUBMERADDR" type="xsd:string" nillable="1"/>
+   <xsd:element name="SUBINST" type="xsd:string" nillable="1"/>
+   <xsd:element name="Notes" type="xsd:string" nillable="1"/>
+  </xsd:sequence>
+ </xsd:complexType>
+ <xsd:complexType name="soapGetLeadsNotesRequest">
+  <xsd:sequence>
+   <xsd:element name="list_id" type="xsd:string"/>
+   <xsd:element name="clientSecret" type="xsd:string"/>
+   <xsd:element name="userName" type="xsd:string"/>
+   <xsd:element name="password" type="xsd:string"/>
+   <xsd:element name="pageNum" type="xsd:string" nillable="1"/>
+   <xsd:element name="pageSize" type="xsd:string" nillable="1"/>
+  </xsd:sequence>
+ </xsd:complexType>
+ <xsd:complexType name="soapGetLeadsCategoryRequest">
+  <xsd:sequence>
+   <xsd:element name="list_id" type="xsd:string"/>
+   <xsd:element name="clientSecret" type="xsd:string"/>
+   <xsd:element name="userName" type="xsd:string"/>
+   <xsd:element name="password" type="xsd:string"/>
+  </xsd:sequence>
+ </xsd:complexType>
+ <xsd:complexType name="soapGetLeadsRequest">
+  <xsd:sequence>
+   <xsd:element name="list_id" type="xsd:string"/>
+   <xsd:element name="clientSecret" type="xsd:string"/>
+   <xsd:element name="userName" type="xsd:string"/>
+   <xsd:element name="password" type="xsd:string"/>
+   <xsd:element name="MID" type="xsd:string" nillable="1"/>
+   <xsd:element name="lead_id" type="xsd:string" nillable="1"/>
+   <xsd:element name="status" type="xsd:string" nillable="1"/>
+   <xsd:element name="code" type="xsd:string" nillable="1"/>
+   <xsd:element name="unread" type="xsd:string" nillable="1"/>
+   <xsd:element name="pageNum" type="xsd:string" nillable="1"/>
+   <xsd:element name="pageSize" type="xsd:string" nillable="1"/>
+  </xsd:sequence>
+ </xsd:complexType>
+ <xsd:complexType name="soapGetActiveLeadsRequest">
+  <xsd:sequence>
+   <xsd:element name="list_id" type="xsd:string"/>
+   <xsd:element name="clientSecret" type="xsd:string"/>
+   <xsd:element name="MID" type="xsd:string"/>
+   <xsd:element name="lead_id" type="xsd:string" nillable="1"/>
+  </xsd:sequence>
+ </xsd:complexType>
+ <xsd:complexType name="soapGetAppsCategoryRequest">
+  <xsd:sequence>
+   <xsd:element name="list_id" type="xsd:string"/>
+   <xsd:element name="clientSecret" type="xsd:string"/>
+   <xsd:element name="userName" type="xsd:string"/>
+   <xsd:element name="password" type="xsd:string"/>
+  </xsd:sequence>
+ </xsd:complexType>
+ <xsd:complexType name="soapGetAppsRequest">
+  <xsd:sequence>
+   <xsd:element name="list_id" type="xsd:string"/>
+   <xsd:element name="clientSecret" type="xsd:string"/>
+   <xsd:element name="userName" type="xsd:string"/>
+   <xsd:element name="password" type="xsd:string"/>
+   <xsd:element name="app_id" type="xsd:string" nillable="1"/>
+   <xsd:element name="status" type="xsd:string" nillable="1"/>
+   <xsd:element name="pageNum" type="xsd:string" nillable="1"/>
+   <xsd:element name="pageSize" type="xsd:string" nillable="1"/>
+  </xsd:sequence>
+ </xsd:complexType>
+ <xsd:complexType name="arrResponse">
+  <xsd:sequence>
+   <xsd:element name="code" type="xsd:string"/>
+   <xsd:element name="data" type="xsd:string"/>
+  </xsd:sequence>
+ </xsd:complexType>
+</xsd:schema>
+</types>
+<message name="soapGetUserRequest">
+  <part name="parameters" type="tns:soapGetUserRequest" /></message>
+<message name="soapGetUserResponse">
+  <part name="parameters" type="tns:arrResponse" /></message>
+<message name="soapPostUserRequest">
+  <part name="parameters" type="tns:soapPostUserRequest" /></message>
+<message name="soapPostUserResponse">
+  <part name="parameters" type="tns:arrResponse" /></message>
+<message name="soapSetPasswordRequest">
+  <part name="parameters" type="tns:soapSetPasswordRequest" /></message>
+<message name="soapSetPasswordResponse">
+  <part name="parameters" type="tns:arrResponse" /></message>
+<message name="soapAuthenticateRequest">
+  <part name="parameters" type="tns:soapAuthenticateRequest" /></message>
+<message name="soapAuthenticateResponse">
+  <part name="parameters" type="tns:arrResponse" /></message>
+<message name="soapAddLeadRequest">
+  <part name="parameters" type="tns:soapAddLeadRequest" /></message>
+<message name="soapAddLeadResponse">
+  <part name="parameters" type="tns:arrResponse" /></message>
+<message name="soapPostLeadRequest">
+  <part name="parameters" type="tns:soapPostLeadRequest" /></message>
+<message name="soapPostLeadResponse">
+  <part name="parameters" type="tns:arrResponse" /></message>
+<message name="soapGetLeadsNotesRequest">
+  <part name="parameters" type="tns:soapGetLeadsNotesRequest" /></message>
+<message name="soapGetLeadsNotesResponse">
+  <part name="parameters" type="tns:arrResponse" /></message>
+<message name="soapGetLeadsCategoryRequest">
+  <part name="parameters" type="tns:soapGetLeadsCategoryRequest" /></message>
+<message name="soapGetLeadsCategoryResponse">
+  <part name="parameters" type="tns:arrResponse" /></message>
+<message name="soapGetLeadsRequest">
+  <part name="parameters" type="tns:soapGetLeadsRequest" /></message>
+<message name="soapGetLeadsResponse">
+  <part name="parameters" type="tns:arrResponse" /></message>
+<message name="soapGetActiveLeadsRequest">
+  <part name="parameters" type="tns:soapGetActiveLeadsRequest" /></message>
+<message name="soapGetActiveLeadsResponse">
+  <part name="parameters" type="tns:arrResponse" /></message>
+<message name="soapGetAppsCategoryRequest">
+  <part name="parameters" type="tns:soapGetAppsCategoryRequest" /></message>
+<message name="soapGetAppsCategoryResponse">
+  <part name="parameters" type="tns:arrResponse" /></message>
+<message name="soapGetAppsRequest">
+  <part name="parameters" type="tns:soapGetAppsRequest" /></message>
+<message name="soapGetAppsResponse">
+  <part name="parameters" type="tns:arrResponse" /></message>
+<portType name="crmServicePortType">
+  <operation name="soapGetUser">
+    <input message="tns:soapGetUserRequest"/>
+    <output message="tns:soapGetUserResponse"/>
+  </operation>
+  <operation name="soapPostUser">
+    <input message="tns:soapPostUserRequest"/>
+    <output message="tns:soapPostUserResponse"/>
+  </operation>
+  <operation name="soapSetPassword">
+    <input message="tns:soapSetPasswordRequest"/>
+    <output message="tns:soapSetPasswordResponse"/>
+  </operation>
+  <operation name="soapAuthenticate">
+    <input message="tns:soapAuthenticateRequest"/>
+    <output message="tns:soapAuthenticateResponse"/>
+  </operation>
+  <operation name="soapAddLead">
+    <input message="tns:soapAddLeadRequest"/>
+    <output message="tns:soapAddLeadResponse"/>
+  </operation>
+  <operation name="soapPostLead">
+    <input message="tns:soapPostLeadRequest"/>
+    <output message="tns:soapPostLeadResponse"/>
+  </operation>
+  <operation name="soapGetLeadsNotes">
+    <input message="tns:soapGetLeadsNotesRequest"/>
+    <output message="tns:soapGetLeadsNotesResponse"/>
+  </operation>
+  <operation name="soapGetLeadsCategory">
+    <input message="tns:soapGetLeadsCategoryRequest"/>
+    <output message="tns:soapGetLeadsCategoryResponse"/>
+  </operation>
+  <operation name="soapGetLeads">
+    <input message="tns:soapGetLeadsRequest"/>
+    <output message="tns:soapGetLeadsResponse"/>
+  </operation>
+  <operation name="soapGetActiveLeads">
+    <input message="tns:soapGetActiveLeadsRequest"/>
+    <output message="tns:soapGetActiveLeadsResponse"/>
+  </operation>
+  <operation name="soapGetAppsCategory">
+    <input message="tns:soapGetAppsCategoryRequest"/>
+    <output message="tns:soapGetAppsCategoryResponse"/>
+  </operation>
+  <operation name="soapGetApps">
+    <input message="tns:soapGetAppsRequest"/>
+    <output message="tns:soapGetAppsResponse"/>
+  </operation>
+</portType>
+<binding name="crmServiceBinding" type="tns:crmServicePortType">
+  <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+  <operation name="soapGetUser">
+    <soap:operation soapAction="http://crm.cardvalue.cn/soap/server.php/soapGetUser" style="rpc"/>
+    <input><soap:body use="encoded" namespace="http://www.cardvalue.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="http://www.cardvalue.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="soapPostUser">
+    <soap:operation soapAction="http://crm.cardvalue.cn/soap/server.php/soapPostUser" style="rpc"/>
+    <input><soap:body use="encoded" namespace="http://www.cardvalue.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="http://www.cardvalue.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="soapSetPassword">
+    <soap:operation soapAction="http://crm.cardvalue.cn/soap/server.php/soapSetPassword" style="rpc"/>
+    <input><soap:body use="encoded" namespace="http://www.cardvalue.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="http://www.cardvalue.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="soapAuthenticate">
+    <soap:operation soapAction="http://crm.cardvalue.cn/soap/server.php/soapAuthenticate" style="rpc"/>
+    <input><soap:body use="encoded" namespace="http://www.cardvalue.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="http://www.cardvalue.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="soapAddLead">
+    <soap:operation soapAction="http://crm.cardvalue.cn/soap/server.php/soapAddLead" style="rpc"/>
+    <input><soap:body use="encoded" namespace="http://www.cardvalue.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="http://www.cardvalue.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="soapPostLead">
+    <soap:operation soapAction="http://crm.cardvalue.cn/soap/server.php/soapPostLead" style="rpc"/>
+    <input><soap:body use="encoded" namespace="http://www.cardvalue.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="http://www.cardvalue.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="soapGetLeadsNotes">
+    <soap:operation soapAction="http://crm.cardvalue.cn/soap/server.php/soapGetLeadsNotes" style="rpc"/>
+    <input><soap:body use="encoded" namespace="http://www.cardvalue.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="http://www.cardvalue.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="soapGetLeadsCategory">
+    <soap:operation soapAction="http://crm.cardvalue.cn/soap/server.php/soapGetLeadsCategory" style="rpc"/>
+    <input><soap:body use="encoded" namespace="http://www.cardvalue.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="http://www.cardvalue.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="soapGetLeads">
+    <soap:operation soapAction="http://crm.cardvalue.cn/soap/server.php/soapGetLeads" style="rpc"/>
+    <input><soap:body use="encoded" namespace="http://www.cardvalue.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="http://www.cardvalue.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="soapGetActiveLeads">
+    <soap:operation soapAction="http://crm.cardvalue.cn/soap/server.php/soapGetActiveLeads" style="rpc"/>
+    <input><soap:body use="encoded" namespace="http://www.cardvalue.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="http://www.cardvalue.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="soapGetAppsCategory">
+    <soap:operation soapAction="http://crm.cardvalue.cn/soap/server.php/soapGetAppsCategory" style="rpc"/>
+    <input><soap:body use="encoded" namespace="http://www.cardvalue.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="http://www.cardvalue.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+  <operation name="soapGetApps">
+    <soap:operation soapAction="http://crm.cardvalue.cn/soap/server.php/soapGetApps" style="rpc"/>
+    <input><soap:body use="encoded" namespace="http://www.cardvalue.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="http://www.cardvalue.cn" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+</binding>
+<service name="crmService">
+  <port name="crmServicePort" binding="tns:crmServiceBinding">
+    <soap:address location="http://crm.cardvalue.cn/soap/server.php"/>
+  </port>
+</service>
+</definitions>

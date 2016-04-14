@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0;maximum-scale=1.0; user-scalable=no;">
+<title>卡得万利</title>
+<link rel="stylesheet" href="../css/jquery.fullPage.css">
+<style>
+.section { text-align: center; font: 20px "Microsoft Yahei"; color: #fff; width:100%;}
+.section p{  z-index:10;position: relative; padding:0 25px; line-height:50px;}
+.section img{ border:none;}
+.section .bottom{width:300px; position:absolute; left:50%; bottom:0; z-index:10; margin-left:-150px; display:none}
+.section h3{ position:relative; z-index:10;}
+.section h3 img{width:60%;}
+.section1 p{ color:#ee3535;  margin:10% 0 80% 0; }
+.section1 .bottom{ display:block;}
+.section2 p { position: relative; left: -120%; margin-bottom:20%; }
+.section3 p { position: relative; bottom: -100%; color:#000; margin-top:10%; }
+.section3 h3 img{ width:70%;}
+.section4,.section5 {  z-index:11;}
+.section4 p{ display:none; color:#000;margin-bottom:20%;}
+.section5 p { position: relative; left:-100%;margin-bottom:60%}
+.section6 p{display:none; color:#000;margin-bottom:80%}
+.arrow{ position:absolute; left:50%; bottom:20px; z-index:11; margin-left:-13px;}
+</style>
+<script src="../script/jquery-1.9.1.min.js"></script>
+<script src="../script/jquery-ui-1.10.3.min.js"></script>
+<script src="../script/jquery.fullPage.min.js"></script>
+<script>
+	var rotateY;
+	var ny=15;
+	var index=0;
+$(document).ready(function() {
+	$.fn.fullpage({
+		slidesColor: ['#efefef', '#1d2643', '#ef6098', '#faac14', '#022831','#bcf3fc'],
+		anchors: ['page1', 'page2', 'page3', 'page4', 'page5','page6'],
+		afterLoad: function(anchorLink, index){
+			if(index == 1){
+				$('.section1').find('h3').children("img").fadeIn(1200);
+				$('.section1').find('p').fadeIn(1000);
+				$('.section1').find('.bottom').fadeIn(1200);
+			}
+			if(index == 2){
+				$('.section2').find('h3').children("img").fadeIn(1200);
+				$('.section2').find('p').delay(500).animate({
+					left: '0'
+				}, 1500, 'easeOutExpo');
+			}
+			if(index == 3){
+				$('.section3').find('h3').children("img").fadeIn(1200);
+				$('.section3').find('p').delay(500).animate({
+					bottom: '0'
+				}, 1500, 'easeOutExpo');
+			}
+			if(index == 4){
+				$('.section4').find('h3').children("img").fadeIn(1200);
+				$('.section4').find('p').fadeIn(2000);
+			}
+			if(index == 5){
+				$('.section5').find('p').delay(500).animate({
+					left: '0'
+				}, 1500, 'easeOutExpo');
+				$('.section5').find('.bottom').fadeIn(1200);
+			}
+			if(index == 6){
+				$('.section6').find('p').fadeIn(1000);
+				$('.section6').find('.bottom').fadeIn(1200);
+			}
+		},
+		onLeave: function(index, direction){
+			if(index == "1"){
+				$('.section1').find('h3').children("img").fadeOut(800);
+				$('.section1').find('p').fadeOut(800);
+				$('.section1').find(".bottom").fadeOut(800);
+				//setTimeOut($('.section1').find('h3').children().remove(),800);
+			}
+			if(index == '2'){
+				$('.section2').find('p').delay(500).animate({
+					left: '-120%'
+				}, 1500, 'easeOutExpo');
+				$('.section2').find('h3').children("img").fadeOut(800);
+				//setTimeOut($('.section2').find('h3').children().remove(),800);
+			}
+			if(index == '3'){
+				$('.section3').find('p').delay(500).animate({
+					bottom: '-100%'
+				}, 1500, 'easeOutExpo');
+				$('.section3').find('h3').children("img").fadeOut(800);
+			}
+			if(index == '4'){
+				$('.section4').find('p').delay(1000).fadeOut(1000);
+				$('.section4').find('h3').children("img").fadeOut(800);
+			}
+			if(index == '5'){
+				$('.section5').find('p').delay(500).animate({
+					left: '-100%'
+				}, 1500, 'easeOutExpo');
+				$('.section5').find(".bottom").fadeOut(800);
+			}
+			if(index == '6'){
+				$('.section6').find('p').fadeOut(800);
+				$('.section6').find(".bottom").fadeOut(800);
+			}
+		}
+	});
+});
+</script>
+</head>
+
+<body>
+<div class="section section1">
+    <h3><img src="../image/advertisement/logo.png"/></h3>
+    <p>让推广更高效——年底差钱不？</p>
+    <img class="bottom" src="../image/advertisement/session1.png"/>
+    <img class="arrow" src="../image/advertisement/arrow.gif"/>
+</div>
+<div class="section section2">
+	<p>卡得万利结合年底商户融资需求推出最高300万额度</p>
+    <h3><img class="bg" src="../image/advertisement/session2.png"/></h3>
+    <img class="arrow" src="../image/advertisement/arrow.gif"/>
+</div>
+<div class="section section3">
+    <h3><img class="bg" src="../image/advertisement/session3.png"/></h3>
+	<p>手续费最高返还20%</p>
+    <img class="arrow" src="../image/advertisement/arrow.gif"/>
+</div>
+<div class="section section4">
+    <h3><img src="../image/advertisement/session4.png"/></h3>
+    <p >肾6活动等系列利好活动</p>
+    <img class="arrow" src="../image/advertisement/arrow.gif"/>
+</div>
+<div class="section section5">
+	<p>但临近年底，绝大多数经理们都在忙年底业绩冲刺、年终总结、明年规划吧？没时间推是吧？</p>
+    <img class="bottom"  src="../image/advertisement/session5.png"/>
+    <img class="arrow" src="../image/advertisement/arrow.gif"/>
+</div>
+<div class="section section6">
+   <p>一句话营销：年底差钱不？通过微信提个线索，剩下的交给我们，你来领钱就是！</p>
+   <img class="bottom"  src="../image/advertisement/session6.png"/>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,491 @@
+/*--------------全局样式--------------*/
+.display-none{display:none;}
+/*-----颜色样式-----*/
+.color999{color: #999;}
+.color333{color: #333;}
+/*13px Arial tab0半个字符空间*/
+.tab05{letter-spacing: 4px;}
+.tab1{letter-spacing: 7px;}
+.tab2{letter-spacing: 9px;}
+/*常用margin padding样式*/
+.margin-0{margin: 0;}
+.margin-t05{margin-top: 5px;}
+.margin-t10{margin-top: 10px;}
+.margin-t15{margin-top: 15px;}
+.margin-r10{margin-right: 10px;}
+.margin-r05{margin-right: 5px;}
+.margin-b05{margin-bottom: 5px;}
+.margin-b10{margin-bottom: 10px;}
+.icon .margin-l-7{margin-left: -7px;}
+.margin-l05{margin-left: 5px;}
+.padding-l10{padding-left: 10px}
+.padding-r15{padding-right: 15px}
+.margin-rl15{margin:0 15px;}
+.padding-rl15{padding:0 15px;}
+/*宽度样式*/
+.width30{width:30px;}
+.width50{width:50px;}
+.width80{width:80px;}
+/*浮动*/
+.float_l{float:left;}
+.float_r{float: right}
+.float_clear{clear: both}
+.border-bottom{border-bottom: 1px solid #e7e7e7;}
+/*常用样式*/
+.font-bold{font-weight: bold;}
+.font12{font-size: 12px;}
+.displaynone{display: none;}
+.displayblock{display: block;}
+.t-indent28{text-indent: 28px;}
+/*framework7样式修改*/
+body{color: #666}
+a{color:#4A87EE;outline: none;}
+a:visited,a:hover,a:active{text-decoration: none;}
+.views,.pages{color: #666}
+.view-main{background-color: #f2f2f2}
+.list-block ul:after,.list-block ul:before{background-color: #e2e2e2;}
+.list-block{margin:20px 0;font-size: 15px;}
+.contacts-block{margin:0;}
+.list-block .item-text{height: auto;}
+.list-block .item-inner:after{background-color: #d8d8d8}
+.badge{padding-top:2px;}
+label{font-weight: normal;}
+.list-block .item-subtitle{font-size: 12px;}
+/*framework7样式修改 end*/
+.back i.icon.card-back{width:25px;background-image: url(../images/icon/back_iphone.png);}
+.icon-placeholder{width:20px;}
+.num-style{width: 25px;height: 25px;line-height: 25px;border-radius: 50%;display: inline-block;color: #fff;text-align: center;background-color: #f06060;font-size: 14px;font-weight: bold;}
+/*tab 安卓点击*/
+/*a.tab-link:visited{color:#4A87EE}*/
+/*a.tab-link.active:visited{color:#fff}*/
+/*scroll loading style*/
+.infinite-scroll-preloader {margin-top:-10px;margin-bottom: 10px;text-align: center;}
+.infinite-scroll-preloader .preloader {width:34px;height:34px;}
+.wechat-back{padding-right: 10px;}
+.badge.badge-dot{height:10px; display:inline;}
+/*--------------全局样式 end--------------*/
+/*--------------引导登陆/注册 20150731 by fhy----------------*/
+.guide{margin:20px 0 20px;}
+.guide-img{width: 100%;text-align: center;}
+.guide-img img{width: 220px;}
+.guide-logo img{width: 200px;}
+.guide-logo{margin-bottom: 10px;}
+@media screen and (min-width: 768px){
+    .guide-img img{width: 324px;}
+    .guide-logo{margin-bottom: 0;}
+}
+.guide-btn{margin-top: 35px;text-align: center;font-family: '微软雅黑';}
+.register-btn,.login-btn{width:120px;height: 35px;border-radius: 5px;display: inline-block;font-size: 18px;}
+.register-btn{border-color: #5dc1f2;color: #5dc1f2;margin-right: 4%;}
+.login-btn{border-color: #34caa4;color: #34caa4;}
+@media screen and (min-width: 768px){
+    .register-btn,.login-btn{width:240px;height: 70px;border-radius: 10px;font-size: 26px;}
+}
+/*--------------引导登陆/注册end----------------*/
+/*--------------首页/home--------------*/
+.home .header{height: 250px;font-size:16px;background-color: #2485d6;}
+@media screen and (min-width: 767px){
+    .home .header{height: 450px;font-size:28px;}
+}
+.home .mylimit{padding-top: 24px;}
+.home .circle,.home .circle-md,.home .circle-sm{border-radius:50%;}
+.home .circle{width: 154px;height:154px;margin:0 auto;position:relative;background-color: rgba(255,255,255,0.15);}
+.home .circle-md{width:138px;height:138px;position:absolute;left:8px;top:8px;background-color: #fed77a;}
+.home .circle-sm{width:124px;height:124px;position:absolute;left:15px;top:15px;background: -webkit-linear-gradient(120deg,#fdb509,#fecd57);-moz-linear-gradient(120deg,#fdb509,#fecd57);linear-gradient(120deg,#fdb509,#fecd57);}
+@media screen and (min-width: 767px){
+    .home .mylimit{padding-top: 35px;}
+    .home .circle{width: 308px;height:308px;margin:0 auto;}
+    .home .circle-md{width:276px;height:276px;position:absolute;left:16px;top:16px;}
+    .home .circle-sm{width:248px;height:248px;position:absolute;left:30px;top:30px;}
+}
+.home .limit-txt{color:#343434;text-align: center;}
+.home .limit-title{width:100px;padding-bottom: 6px;border-bottom: 1px solid #fff;position: absolute;top:43px;left: 28px;}
+.home .limit-num{width:124px;font-size: 24px;position: absolute;left:15px;top:75px;}
+.home .icon-rmb{font-size:15px;padding-right: 2px;}
+#surplus-time{font-size: 20px;margin-top: 3px;}
+/*提升额度按钮加红点 modified by fhy on 20150720*/
+.up-limit{width:110px;margin:0 auto;position:relative}
+.up-limit-icon{position:absolute !important;left:115px;top:0;}
+.up-limit-inner{width: 110px;height: 34px;line-height:33px;margin:16px auto 0;border-color: #fff;color: #fff;opacity: 0.8}
+@media screen and (min-width: 767px){
+    .home .limit-title{width:210px;padding-bottom: 10px;top:88px;left: 49px;color:#000;}
+    .home .limit-num{width:250px;font-size: 50px;left:30px;top:145px;}
+    .home .icon-rmb{font-size:26px;padding-right: 5px;}
+    #surplus-time{font-size: 40px;margin-top: 4px;}
+    .up-limit{width:210px;}
+    .up-limit-icon{left:215px;top:0;}
+    .up-limit-inner{width: 210px;height:50px;line-height:50px;margin-top:20px;}
+}
+/*额度审核中*/
+
+.home-srcoll img{width:138px;height:138px;display:block;position: absolute;left:8px;top: 8px;
+    -webkit-animation:scroll-circle 5s linear infinite normal;
+    -moz-animation:scroll-circle 5s linear infinite normal;
+    -ms-animation:scroll-circle 5s linear infinite normal;
+    -o-animation:scroll-circle 5s linear infinite normal;
+    animation:scroll-circle 5s linear infinite normal;
+}
+@media screen and (min-width: 767px){
+    .home-srcoll img{width:276px;height:276px;position: absolute;left:16px;top: 16px;}
+}
+@-webkit-keyframes scroll-circle{
+    from{-webkit-transform:rotate(0deg);}
+    to{-webkit-transform:rotate(360deg);}
+}
+@-moz-keyframes scroll-circle{
+    from{-moz-transform:rotate(0deg);}
+    to{-moz-transform:rotate(360deg);}
+}
+@-ms-keyframes scroll-circle{
+    from{-ms-transform:rotate(0deg);}
+    to{-ms-transform:rotate(360deg);}
+}
+@-o-keyframes scroll-circle{
+    from{-o-transform:rotate(0deg);}
+    to{-o-transform:rotate(360deg);}
+}
+@keyframes scroll-circle{
+    from{transform:rotate(0deg);}
+    to{transform:rotate(360deg);}
+}
+.home-content{margin-top: 15px;}
+.home-row{height: 115px;margin: 0 15px;}
+.home-row.last{border-bottom: none;}
+@media screen and (min-width: 767px){
+    .home-row{height: 270px}
+}
+.home-block{height:115px;text-align: center;padding-top: 15px;}
+@media screen and (min-width: 767px){
+    .home-block{height:270px;padding-top: 64px;}
+}
+.home .index-icon{width: 65px;height: 65px;border-radius: 50%;margin:0 auto;background-size: 50% 50% !important;}
+@media screen and (min-width: 767px){
+    .home .index-icon{width: 160px;height: 160px;border-radius: 160px;}
+}
+.home .immediate-cash{background:#01bef6 url(../images/home/cash.png) no-repeat center center;}
+.home .myapply{background:#fdbf2b url(../images/home/myapply.png) no-repeat center center;}
+.home .bill-list{background:#4ec67c url(../images/home/bill-list.png) no-repeat center center;}
+.home .add-file{background:#ff745d url(../images/home/add-file.png) no-repeat center center;}
+.home .expecting{background:#cfcfcf url(../images/home/expecting.png) no-repeat center center;}
+.home .block-txt{font-size: 14px;margin-top:5px;color: #626262;font-weight: normal;}
+@media screen and (min-width: 767px){
+    .home .block-txt{font-size: 30px;}
+}
+.icon .badge-icon-pos{height:10px; display:inline;}
+/*--------------首页/home end--------------*/
+/*--------------用户注册/登录--------------*/
+.login{margin:20px 0 10px;}
+.login .list-block ul:after,.login .list-block ul:before{background-color:#fff;}
+.login .item-inner:after{background-color: #fff;}
+.username_icon,.pwd_icon{width: 20px;height:20px;display: inline-block;}
+.login .item-media + .item-inner{margin-left: 0;}
+.login ul{border:1px solid #e7e7e7;border-bottom: none;}
+.login ul.last{border-bottom: 1px solid #e7e7e7;}
+.login input.login_input{height: 35px;line-height: 35px;font-size: 14px;}
+.login .item-title{width:100%;}
+.get_verti{position: absolute;top:0;right:0;font-size: 12px;margin-top: 2px;color: #ff9600;border-color: #ff9600;width: 82px; height: 29px;}
+.bind-number{margin-top: 10px;}
+.register_hint{text-align: right;margin-left: 0 !important;}
+.register_top{margin-bottom: -10px;}
+.register_top .bind{text-align: right;margin-left: 0}
+/*--------------用户注册/登录 end--------------*/
+/*--------------授权条款--------------*/
+.toolbar-btn{width:100%;height: 40px;line-height: 40px;}
+/*--------------授权条款 end--------------*/
+/*--------------我的店铺--------------*/
+.shop-title-row{border-bottom: 1px solid #EAEAEA;padding-bottom: 5px;background-position:right 6px !important;}
+.list-block.media-list .shop-title{font-size:17px;font-weight: normal;}
+.list-block .shop-title-txt{margin-left: 5px;vertical-align: top;}
+.list-block .shop-status{color: #FF7E30;font-size: 14px;margin-top: 2px;}
+.shop-subtitle{padding-top: 10px;}
+.sub-code{padding-top: 5px;}
+.limit-show{padding:8px 0 2px;margin-top:7px;text-align: right;font-size: 14px;border-top: 1px solid #EAEAEA;}
+.limit-label{color: #999}
+.limit-sum{color:#4A87EE}
+.operate-block{text-align: right}
+.operate-btn{width:75px;height:31px;line-height:29px;display:inline-block;text-align:center;border:1px solid #5f646e;border-radius:5px;color:#5f646e;font-size: 14px;margin-left: 5px;}
+.operate-block .add-file:visited,.operate-block .upgrade-limit:visited{color:#5f646e}
+.operate-block .get-cash{border-color:#FF7E30;color:#FF7E30;}
+.money-icon,.account-icon,.more-icon{width:20px;height:20px;background-size: 20px;}
+.money-icon{background: url(../images/money.png) no-repeat center center;background-size: 20px;}
+.active .money-icon{background: url(../images/money-active.png) no-repeat center center;background-size: 20px;}
+.account-icon{background: url(../images/myaccount.png) no-repeat center center;background-size: 20px;}
+.active .account-icon{background: url(../images/myaccount-active.png) no-repeat center center;background-size: 20px;}
+.more-icon{background: url(../images/more.png) no-repeat center center;background-size: 20px;}
+.active .more-icon{background: url(../images/more-active.png) no-repeat center center;background-size: 20px;}
+.add-icon{margin-bottom: 3px;}
+.home-icon{width:20px;height:20px;background: url(../images/icon/home-icon.png) no-repeat left center;background-size: 19px;}
+/*--------------我的店铺 end--------------*/
+/*--------------提升额度 modified by fhy on 20150701--------------*/
+.list-block .subcode-inner{margin-left: 5px !important;}
+.upgrade-list .glyphicon-credit-card{font-size: 17px;}
+.upgrade-list .icon-pos-limit{width:16px;height:20px;background:url(../images/icon/pos-limit.png) no-repeat left top;background-size: 100%}
+.upgrade-list .icon-jxl{width:18px;height:18px;background:url(../images/icon/jxl.png) no-repeat left top;background-size: 100%}
+/*基础额度*/
+.wechat-select .select-inner{height:33px;border: 1px solid #ddd !important;}
+.wechat-select{margin-right: 0;}
+.datetime-input{background-color: #fff !important;}
+.datetime-addon{border-left: 1px solid #ccc !important;height: 35px;}
+.basic-limit-note{font-size: 12px;padding:5px 15px 0;color: #898989}
+/*pos额度*/
+.pos-tips{font-size: 12px;}
+.pos-tips .pos-proof{color:#FF7E30;line-height: 20px}
+.pos-eg{margin-top: 10px;}
+.pos-eg .popover-pos{width: 270px}
+.pos-eg .pos-bill{width: 100%;text-align: center;margin-top: 20px;padding:0;}
+.pos-eg .pos-bill img{width: 250px;}
+.list-block .item-subtitle.pos-note{white-space: normal;}
+
+/*--------------提升额度 end--------------*/
+/*--------------身份验证--------------*/
+.verify-title{border-bottom: 1px solid #D8D8D8;}
+.verify-answer{font-size: 14px;}
+.verify-error{color: #F43636;font-size: 14px;}
+.verify-btn a{width: 100%;height: 40px !important;}
+.verify-btn .verify-cancel{display: block}
+.verify-toolbar{height: 100px;}
+.verify-toolbar-inner{display: block;}
+.verify-page-content{padding-bottom: 105px !important;}
+/*--------------身份验证 end--------------*/
+/*--------------我的账户2015.6.17 by cen--------------*/
+.wechat-icon-home{color: #99d572;}
+.wechat-icon-coupon{color: #ffbe58}
+.wechat-icon-campaign{color: #83D0FC}
+.wechat-icon-user{color: #ffbe58}
+.wechat-icon-info{color:#929BFF }
+.wechat-icon-phone{color:#FA98E0 }
+.glyphicon-barcode{color: #fb8080}
+.glyphicon-barcode.glyphicon-barcode-sub{color: #929BFF}
+@media screen and (min-width: 900px) {
+    .myaccount-account-new{height:160px;}
+    .myaccount-account-new .myaccount-pic-new{width: 500px;margin-top: 40px; margin-left: 17px;}
+    .myaccount-account-new .myaccount-txt{margin-left: 42px;font-size: 17px;line-height: 25px;margin-top: 22px;}
+}
+.page-content .account-color a,.page-content .account-color a:visited, .page-content .account-color a:hover, .page-content .account-color a:active{color: #eeeeee;}
+.my-account-new{background: url("../images/account-bg.jpg");background-size: 100%; height: 100px;}
+.myaccount-pic-new{width:58px;height: 85px;padding: 0 0 0 15px;background: url("../images/user-pic.png") no-repeat center;background-position-x: initial;background-size: 58px;}
+.myaccount-txt{font-size: 15px; text-align: left;display: block;height: 100px;margin-top: 20px;}
+/*--------------我的账户 end--------------*/
+/*--------------还款明细--------------*/
+.refund-subtext{padding:3px 0;}
+.refund-list-label{font-weight: bold}
+.refund-list-inner .no-refund{color: #FF7E30}
+.refund-list-inner{list-style-type: none;padding:0;margin-bottom: 0;}
+.refund-list-inner li{margin-bottom: 10px;}
+.refund-list-inner li:last-child{margin-bottom: 0;}
+.refund-list-title{font-size: 17px;margin-bottom: 15px;color: #50C8D2}
+.refund-list-inner .refund-subtext-label + span{color:#E8894E}
+.refund-nexttime{border-top: 1px solid #CFCFCF;padding-top: 10px;}
+.refund-nexttime li:last-child{margin-bottom: 0;}
+.refund-col-right{margin-left: 10px !important;text-align: right}
+.refund-col-right li{margin-right: 15px;}
+.refund-fee{float: right}
+/*--------------还款明细 end--------------*/
+/*--------------validte验证--------------*/
+.error{color: red;}
+/*--------------validte验证 end--------------*/
+/*--------------空白页提示--------------*/
+/*--------------2015.6.19 by cen--------------*/
+.blank-tips{text-align: center;margin-top: 20%;margin-bottom: 10%;}
+.blank-tips .tips-img{width:100px;}
+@media screen and (min-width: 767px) {
+    .blank-tips .tips-img{width:200px;}
+}
+.blank-tips .tips-btn{width:100px;margin:0 auto;}
+/*--------------空白页提示 end--------------*/
+/*--------------我的申请--------------*/
+.list-block .apply-status{color: #FF7E30;font-size: 14px;}
+.apply-list .apply-subtitle{font-size: 13px;}
+.list-block.media-list  .apply-item-inner{padding-top: 18px;padding-bottom: 19px;}
+.agree-apply{padding:3px 15px 0;position: fixed;bottom: 50px;  width: 100%;background-color: #EFEFF4;z-index: 999}
+/*--------------创建新申请--------------*/
+/*--------------2015.6.19 by cen--------------*/
+.glyphicon-picture,.glyphicon-modal-window,.glyphicon-list-alt,.glyphicon-credit-card,.glyphicon-list{font-size: 16px;vertical-align: middle;}
+.wechat-icon-picture{color:#CA5BE8;}
+.wechat-icon-modal-window{color:#F0A329;}
+.wechat-icon-list-alt{color:#F26862;}
+.wechat-icon-credit-card{color:#c872f4;}
+.wechat-icon-list{color:#5b88fb;font-size: 15px;}
+.uploadfile-block{font-size: 14px;}
+.uploadfile-block.media-list .item-title{font-weight: normal;}
+.uploadfile-block .item-title.label{width:40%;display:block;padding-left:0;padding-right:0;font-size: 14px;font-weight: normal;color:#666 !important;text-align: left;line-height: 15px;}
+@media screen and (min-width: 768px) {
+    .uploadfile-block .item-title.label{width:25%;}
+}
+.uploadfile-block input[type="text"],.uploadfile-block select,.uploadfile-block textarea{font-size: 14px;}
+.uploadfile-block .uf-addr{height: 70px;}
+.uf-title{display: inline-block;}
+.new-apply.buttons-row .button{width: 95px;}
+#tab1{padding-bottom: 44px;}
+/*--------------创建新申请 end--------------*/
+/*--------------上传图片--------------*/
+.pic-thumbnail{min-height: 100px;margin-top: 5px;border-top: 1px solid #ddd;}
+.pic-thumbnail .thumbnail-inner{width:90px;min-height: 125px;overflow:hidden;float: left;margin-left: 10px;margin-top:10px;position: relative}
+/*width>height*/
+.pic-thumbnail .thumbnailimg.width-large{width:auto;height: 90px;position: absolute;left: -15px;top:-2px}
+/*width<height*/
+.pic-thumbnail .thumbnailimg.height-large{width: 90px;max-height:90px;position: absolute;right: 0;top:0;}
+.pic-thumbnail .thumbnailimg-add{width:90px;height: 90px;}
+.pic-thumbnail .thumbnailimg-eg{width:90px;height: 90px;}
+.thumbnailimg-tips{position: absolute;left: 0;top:90px;font-size: 12px;color: #FA6464;}
+.id-title{color: #6d6d72;}
+.upload-btn{width:90px;height: 90px;position: absolute;top: 0;left:0;opacity: 0;filter: alpha(opacity:0);}
+.pic-thumbnail .delete-btn{display:inline-block;width:22px;height:22px;position: absolute;right:-2px;top:-2px;}
+.pic-thumbnail .delete-img{width:20px;height:20px;}
+.list-block.media-list .item-media.id-title{padding:0 0 2px;}
+i.icon.idfront-icon,i.icon.idback-icon,i.icon.idhand-icon{width:20px;height: 20px;background-size: 20px !important;margin-right: 3px;margin-bottom: 1px;}
+i.icon.idfront-icon{background-image: url(../images/id-front.png);}
+i.icon.idback-icon{background-image: url(../images/id-back.png)}
+i.icon.idhand-icon{background-image: url(../images/id-hand.png);}
+/*上传身份证 modified by fhy 20150617*/
+.upload-note{color: #F9455A;font-size: 12px;}
+.wechat-icon-uploadFile-info{color:#F9455A;font-size: 12px; }
+.uploadFile-note{margin-top: 5px;}
+.border0{border:0px; min-height: 400px;}
+/*--------------上传图片 end--------------*/
+/*--------------放款待确认----------------*/
+.fc-title{text-align: center;margin:15px;}
+.checkbox_check{font-size: 1.1em; margin-left: 2px;}
+.buttonCancel{background-color:#F2F2F2 ; border: 1px solid #616161; color: #616161; margin-top: 15px; margin-bottom: 15px;}
+/*--------------放款待确认 end----------------*/
+
+/*--------------添加POS商编----------------*/
+.pos-code-confirm{color:#FF7E30;}
+.pos-code-position{margin-right: 20px;}
+.poscode-text{max-width: 71%;}
+.poscode-item-title-row{font-size: 14px; padding-right: 20px;  -webkit-box-pack: justify;
+    /* 混合版本语法: IE 10 */
+    display: -ms-flexbox;
+    -ms-justify-content:space-between;
+    /* 新版本语法： Chrome 21+ */
+    display: -webkit-flex;
+    /* 新版本语法： Opera 12.1, Firefox 22+ */
+    -webkit-justify-content:space-between;
+    display: flex;
+    justify-content:space-between;}
+.poscode-txt{font-size: 14px;}
+.poscode-txt-color{color:rgb(102, 102, 102);}
+.item-title a,.item-title a:visited,.item-title a:hover,.item-title a:active{color:rgb(102,102,102);}
+/*--------------添加POS商编 end----------------*/
+
+/*--------------案例分享----------------*/
+.caseShare_title{font-weight: bolder; text-align: center;}
+.caseShare_pic{width: 100%; text-align: center;}
+.caseShare_story{text-indent: 2em; line-height: 170%;}
+/*--------------案例分享 end----------------*/
+
+/*--------------常见问题----------------*/
+.wechat-icon-question-sign{color:#EA5C72;}
+/*--------------常见问题 end----------------*/
+
+/*--------------更多----------------*/
+.glyphicon-red{color:#E8894E;}
+.glyphicon-align-justify{color:#83D0FC;}
+.wechat-icon-file{color:#F58EF4;}
+.wechat-icon-phone-alt{color:#64DBD2;}
+/*--------------更多 end----------------*/
+
+/*--------------公司简介----------------*/
+.aboutUs_titPic{margin-top:5px;}
+/*--------------公司简介 end----------------*/
+
+/*--------------资质荣誉----------------*/
+.honorTit{text-indent: 0; text-align: center;font-weight: bolder;margin:10px 0 5px;}
+.clearHonor{width: 100%; height: 1px;border-bottom: 1px solid #eeeeee;}
+/*--------------资质荣誉 end----------------*/
+
+/*--------------联系方式----------------*/
+.contactUsCon{margin-top: 7px;}
+.wechat-icon-print{color:#666; }
+.contactUsText{color: #666666;}
+/*--------------联系方式 end----------------*/
+
+/*--------------新闻中心----------------*/
+.bg-grey,.button.button-fill.bg-grey,a.bg-grey,.list-block .swipeout-actions-left a.bg-grey,.list-block .swipeout-actions-right a.bg-grey {background-color:#A3A3A3;}
+.border-grey {  border-color: #A3A3A3;}
+.newsTit{color: #999;font-size: 12px;line-height: 21px; height: 41px;margin-top: 3px;text-align: justify;}
+/*--------------新闻中心 end----------------*/
+
+/*--------------意见反馈----------------*/
+.commentsTextarea{width: 100%;}
+.content-block-title1{color: #A15053;width: 250px; padding: 0 15px; margin: 35px 15px 10px 0;}
+/*--------------意见反馈 end----------------*/
+
+/*--------------个人信息--------------------*/
+.quit-but-color{background-color:#ff4040;color: #fff;border: 1px solid #ee3b3b;}
+.wechat--ok-sign{color: #69DF7C;}
+.wechat-icon-lock{color:#8B79DF;}
+.myAccount-username_icon,.changeCode-username_icon,.changeCode-pwd_icon,.myAccount-account_icon,.myAccount-changepass-icon,.myAccount-phone_icon{width: 20px;height:20px;display: inline-block;background-size: 20px;background-repeat: no-repeat;background-position: 95% center;background-position: -webkit-calc(100% - 0px) center;background-position: calc(100% - 0px) center;}
+.myAccount-username_icon{background-image: url("../images/icon/username_icon.png");}
+.myAccount-account_icon{background-image: url("../images/icon/id-icon.png");}
+.myAccount-phone_icon{background-image: url("../images/icon/phone.png");}
+.myAccount-changepass-icon{background-image: url("../images/icon/pwd.png");}
+.changeCode-username_icon{background-image: url("../images/icon/pwd.png");}
+.changeCode-pwd_icon{background-image: url("../images/icon/key.png");}
+/*--------------个人信息 end--------------------*/
+
+/*--------------滚动条宽度设置为0----------------------*/
+/*--------------2015.6.18 by cen----------------------*/
+::-webkit-scrollbar { width: 0px;}
+/*--------------滚动条 end----------------------*/
+
+/*--------------2015.6.23 by cen----------------*/
+.none-navbar{margin-top: -30px;}
+/*--------------2015.6.23 by cen----------------*/
+
+/*--------------条款内容 20150623 by fhy----------------------*/
+.terms-content{background-color: #fff;margin-top: 20px;line-height: 25px;}
+.terms-list{list-style-type: none;padding-left: 0;}
+.terms-list li{padding-bottom: 10px;}
+.terms-subtitle{font-size: 18px;}
+
+/*--------------条款内容 end----------------------*/
+
+/*--------------卡得万利平台个人会员服务协议2015.6.23 by cen--------------------*/
+.contact-line-height{line-height: 25px;font-size: 12px;}
+.service-title{font-weight: bold;padding-bottom: 15px;}
+.service-weight{font-weight: bold;}
+.service-block{padding-bottom: 15px;text-align:justify;text-justify: inter-ideograph;}
+.service-block2{padding-bottom: 3px;text-align:justify;text-justify: inter-ideograph;}
+.service-title-big{color:#ff9600;font-weight: normal;}
+.service-block-inner{padding-left: 9px;}
+.service-block-inner2{padding-left: 3px;}
+/*--------------卡得万利平台个人会员服务协议 end--------------------*/
+
+/*--------------隐私说明2015.6.23 by cen--------------------*/
+.privacy-block{padding-bottom: 20px;}
+.privacy-block2{padding-bottom: 5px;}
+.privacy-line-height{line-height: 25px;}
+.privacy-block-inner{padding-left: 15px;}
+.privacy-block-inner2{padding-left: 8px;}
+/*--------------隐私说明 end--------------------*/
+
+/*----------协议 APP&安卓兼容----------*/
+.register-padding{padding: 0px;}
+.popup .register-padding{padding: 0px;margin:40px 0;}
+.register-scroll{height: 100%; overflow-y: scroll; padding: 0 15px;}
+/*----------协议 end----------*/
+
+/*----------协议关闭按钮 end----------*/
+.close-display{position:fixed; top:0px; z-index:99999; width:100%; height:40px; background-color:#F7F7F8;}
+.close-line-height{height:10px;}
+/*----------协议关闭按钮 end----------*/
+
+/*----------更多 案例分享 公司简介 资质荣誉 overflow-Y增加滑动scroll----------*/
+.pages .index .page-content-scroll{overflow-y: scroll; height: 100%;}
+/*----------更多 案例分享 公司简介 资质荣誉 overflow-Y增加滑动scroll end----------*/
+
+/*----------小企鹅 下载页面----------*/
+.nav-body2{width: 100%; background-color: #ffffff;}
+.xiaoqie-up{width: 100%;}
+.xiaoqie-up img{width: 100%;}
+.xiaoqie-bottom img{width: 100%;}
+.iphone-up{margin-top: -96%;}
+.anzhuo-up{padding: 3% 0 73% 0;}
+.xiaoqie-iphone img{width: 40%;}
+.xiaoqie-anzhuo img{width: 40%;}
+.iphone-bottom{margin-top: -38%;}
+.iphone-bottom img{width: 40%;}
+.anzhuo-bottom img{width: 40%;}
+.anzhuo-bottom{margin-top: 3%;}
+/*----------小企鹅 下载页面 end----------*/
